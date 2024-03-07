@@ -2,11 +2,12 @@ import Image from 'next/image';
 import React from 'react';
 import logo from '../../assets/logo.svg';
 import Link from 'next/link';
+import "../../app/globals.css";
 
 const NavBar = () => {
     return (
         <div className=''>
-            <div className='fixed top-0 w-full p-5 z-50'>
+            <div className='fixed top-0 w-full p-5 z-50 nav'>
                 <div className='flex gap-5 justify-between'>
                     <Image src={logo}
                         width={100}
