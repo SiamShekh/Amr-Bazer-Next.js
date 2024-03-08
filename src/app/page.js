@@ -44,12 +44,16 @@ const page = () => {
         </div>
         {/* Section: Grid Item */}
 
-        {/* Section: Women push doge card */}
-        <div className="bg-[#003459] md:h-96  rounded-2xl hidden lg:block relative overflow-hidden">
-          <div className="h-96 w-96 absolute bg-[#002A48] z-0 rounded-3xl rotate-[28.25deg]  -bottom-20 -left-20"></div>
-          <div className="h-[550px] w-3/4 absolute bg-[#FCEED5] z-0 rounded-full  rotate-[-25.23deg] -top-24 -right-52"></div>
+        <div className="w-full border-2 md:hidden block my-5 border-blue-950 text-center py-2 rounded-xl text-blue-900">
+          <Link href={''}>View More</Link>
+        </div>
 
-          <div className="flex justify-between items-center">
+        {/* Section: Women push doge card */}
+        <div className="bg-[#003459] md:h-96  rounded-2xl  lg:block relative overflow-hidden">
+          <div className="h-96 w-96 absolute bg-[#002A48] z-0 rounded-3xl rotate-[28.25deg]  -bottom-20 -left-20"></div>
+          <div className="md:h-[550px] w-3/4 absolute bg-[#FCEED5] z-0 rounded-full h-[700px] rotate-[70deg] md:rotate-[-25.23deg] -top-60 md:-top-24 md:-right-52"></div>
+
+          <div className="flex justify-between md:flex-row flex-col-reverse items-center">
             <Image src={women_dog} alt="doge " className="z-10 relative -bottom-12" />
             <div className="m-auto mx-10 z-10 text-end">
               <div className="my-5">

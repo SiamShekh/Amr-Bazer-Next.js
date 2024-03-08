@@ -1,5 +1,15 @@
 
-# Project: Amr Bazer
+# Project: Planq Bangladesh
+
+
+## Screenshots
+
+![App Screenshot](https://i.ibb.co/RjxFx3w/Screenshot-2024-03-08-065052.png?text=App+Screenshot+Here)
+
+
+## Demo
+
+https://feed-pet.vercel.app/
 
 
 ## Run Locally
@@ -7,13 +17,13 @@
 Clone the project
 
 ```bash
-  git clone https://github.com/SiamShekh/Amr-Bazer-Next.js.git
+  git clone https://github.com/SiamShekh/Planq-Bangladesh.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd Amr-Bazer-Next.js
+  cd Planq-Bangladesh
 ```
 
 Install dependencies
