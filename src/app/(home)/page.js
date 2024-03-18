@@ -1,21 +1,27 @@
 import ProductCarts from "@/components/shared/ProductCarts";
 import Home_Carosul from "@/components/ui/Home_Carosul";
 import Image from "next/image";
-import women_dog from "../assets/women_with_doge.svg";
+import women_dog from "../../assets/women_with_doge.svg";
 import Link from "next/link";
 import ProductPetCarts from "@/components/shared/ProductPetCarts";
 import PatnerCard from "@/components/shared/PatnerCard";
-import patner1 from "../assets/patner1.svg";
-import patner2 from "../assets/patner2.svg";
-import patner3 from "../assets/patner3.svg";
-import patner4 from "../assets/patner4.svg";
-import patner5 from "../assets/patner5.svg";
-import patner6 from "../assets/patner6.svg";
-import patner7 from "../assets/patner7.svg";
-import doge_hand from "../assets/dog_hand.svg";
+import patner1 from "../../assets/patner1.svg";
+import patner2 from "../../assets/patner2.svg";
+import patner3 from "../../assets/patner3.svg";
+import patner4 from "../../assets/patner4.svg";
+import patner5 from "../../assets/patner5.svg";
+import patner6 from "../../assets/patner6.svg";
+import patner7 from "../../assets/patner7.svg";
+import doge_hand from "../../assets/dog_hand.svg";
 import Blog_Card from "@/components/shared/Blog_Card";
+import axios_master from "@/components/hook/axios_master";
 
-const page = () => {
+const page = async () => {
+
+  const useAxios = axios_master();
+  const products = await useAxios.get('/product');
+  const dog = await useAxios.get('/dog');
+
   return (
     <div className="bg-white">
       {/* First Hero */}
@@ -33,14 +39,9 @@ const page = () => {
         {/* Section: Take a look at some of our pets */}
 
         <div className="grid lg:grid-cols-4 gap-5 my-5">
-          <ProductCarts />
-          <ProductCarts />
-          <ProductCarts />
-          <ProductCarts />
-          <ProductCarts />
-          <ProductCarts />
-          <ProductCarts />
-          <ProductCarts />
+          {
+            dog.data.map(data=> <ProductCarts data={data} key={data?._id}/> )
+          }
         </div>
         {/* Section: Grid Item */}
 
@@ -86,15 +87,9 @@ const page = () => {
 
         {/* Our Product Carts */}
         <div className="grid lg:grid-cols-4 gap-5 my-5">
-          <ProductPetCarts />
-          <ProductPetCarts />
-          <ProductPetCarts />
-          <ProductPetCarts />
-          <ProductPetCarts />
-          <ProductPetCarts />
-          <ProductPetCarts />
-          <ProductPetCarts />
-
+          {
+            products.data.map(data => <ProductPetCarts data={data} key={data?._id}/>)
+          }          
         </div>
 
         {/* Patner Title */}
