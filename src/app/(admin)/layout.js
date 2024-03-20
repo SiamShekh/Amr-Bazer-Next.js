@@ -4,7 +4,6 @@ import { Teko } from "next/font/google";
 const teko = Teko({ subsets: ["latin"] });
 
 const layout = ({ children }) => {
-
     return (
         <html lang="en">
             <body className={teko.className}>
