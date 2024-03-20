@@ -1,8 +1,11 @@
 import axios_master from "@/components/hook/axios_master";
+import { useForm as Form } from "react-hook-form";
 
 const page = async () => {
     const useAxios = axios_master();
     const home_data = await useAxios.get('/item/count');
+
+
     console.log("home_data:", home_data.data);
     return (
         <div className="p-10">
