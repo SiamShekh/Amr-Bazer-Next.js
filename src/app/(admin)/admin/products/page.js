@@ -15,7 +15,7 @@ const page = async () => {
                 {
                     product.data.map(data =>
                         <div key={data?._id} className=" bg-gray-50 rounded-xl p-5 border border-gray-300">
-                            <Image src={data?.photo} alt="" height={224} width={300} className=" h-56 object-cover mb-5 rounded-lg" />
+                            <img src={data?.photo} alt="" height={224} width={300} className=" h-56 object-cover mb-5 rounded-lg" />
                             <p className="text-blue-950 font-bold line-clamp-1">{data?.name}</p>
                             <div className="flex justify-between">
                                 <p>Gene: {data?.gender}</p>

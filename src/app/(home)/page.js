@@ -1,7 +1,7 @@
 import ProductCarts from "@/components/shared/ProductCarts";
 import Home_Carosul from "@/components/ui/Home_Carosul";
 import Image from "next/image";
-import women_dog from "../../assets/women_with_doge.svg";
+
 import Link from "next/link";
 import ProductPetCarts from "@/components/shared/ProductPetCarts";
 import PatnerCard from "@/components/shared/PatnerCard";
@@ -21,7 +21,6 @@ const page = async () => {
   const useAxios = axios_master();
   const products = await useAxios.get('/product');
   const dog = await useAxios.get('/dog');
-
   return (
     <div className="bg-white">
       {/* First Hero */}
@@ -55,7 +54,7 @@ const page = async () => {
           <div className="md:h-[550px] w-3/4 absolute bg-[#FCEED5] z-0 rounded-full h-[700px] rotate-[70deg] md:rotate-[-25.23deg] -top-60 md:-top-24 md:-right-52"></div>
 
           <div className="flex justify-between md:flex-row flex-col-reverse items-center">
-            <Image src={women_dog} alt="doge " className="z-10 relative -bottom-12" />
+            <img src="https://i.ibb.co/Qpn82NZ/women-with-doge.png" alt="doge" className="z-10 relative -bottom-12" />
             <div className="m-auto mx-10 z-10 text-end">
               <div className="my-5">
                 <p className="text-blue-950 lg:text-6xl md:text-4xl text-xs font-bold">One more friend</p>
@@ -120,7 +119,7 @@ const page = async () => {
           <div className="h-[550px] w-3/4 absolute bg-[#FCEED5] z-0 rounded-full  rotate-[-25.23deg] -top-24 -left-52"></div>
 
           <div className="flex justify-between flex-row-reverse items-center h-full">
-            <Image src={doge_hand} alt="doge " className="z-10 relative h-full" />
+            <img src={"https://i.ibb.co/V3bGqT9/dog-hand.png"} alt="doge " className="z-10 relative h-full" />
             <div className="m-auto mx-10 z-10 text-start">
               <div className="my-5">
                 <p className="text-blue-950 lg:text-5xl md:text-4xl text-2xl font-bold">One more friend</p>
