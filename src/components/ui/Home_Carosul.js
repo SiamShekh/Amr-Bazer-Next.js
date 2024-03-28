@@ -1,13 +1,9 @@
 'use client';
-
+import WomenDog from "../../assets/hero_image.png"
 import Link from "next/link";
 import Image from "next/image";
 
 const Home_Carosul = () => {
-
-    const imageLoader = ({ quality }) => {
-        return `https://i.ibb.co/vxmn37J/photo-2021-11-07-11-52-44.jpg?q=${quality || 75}`
-    }
 
     return (
         <div className="md:h-screen relative w-full bg-[#F7DBA7] rounded-b-3xl">
@@ -31,8 +27,7 @@ const Home_Carosul = () => {
 
                 <div className="w-full h-80 relative md:h-full bottom-0 flex items-center justify-center">
                     <Image
-                        src="https://i.ibb.co/V3bGqT9/dog-hand.png"
-                        loader={imageLoader}
+                        src={WomenDog}
                         className="bottom-0 absolute right-0 z-20 "
                         alt="dog with women" />
                 </div>

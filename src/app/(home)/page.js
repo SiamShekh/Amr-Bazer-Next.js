@@ -1,7 +1,6 @@
 import ProductCarts from "@/components/shared/ProductCarts";
 import Home_Carosul from "@/components/ui/Home_Carosul";
 import Image from "next/image";
-
 import Link from "next/link";
 import ProductPetCarts from "@/components/shared/ProductPetCarts";
 import PatnerCard from "@/components/shared/PatnerCard";
@@ -12,15 +11,17 @@ import patner4 from "../../assets/patner4.svg";
 import patner5 from "../../assets/patner5.svg";
 import patner6 from "../../assets/patner6.svg";
 import patner7 from "../../assets/patner7.svg";
-import doge_hand from "../../assets/dog_hand.svg";
+import WomenDog from "../../assets/women_with_doge.png";
 import Blog_Card from "@/components/shared/Blog_Card";
 import axios_master from "@/components/hook/axios_master";
+import isUserSigned from "@/components/hook/isUserSigned";
 
 const page = async () => {
 
   const useAxios = axios_master();
   const products = await useAxios.get('/product');
   const dog = await useAxios.get('/dog');
+  
   return (
     <div className="bg-white">
       {/* First Hero */}
@@ -54,7 +55,7 @@ const page = async () => {
           <div className="md:h-[550px] w-3/4 absolute bg-[#FCEED5] z-0 rounded-full h-[700px] rotate-[70deg] md:rotate-[-25.23deg] -top-60 md:-top-24 md:-right-52"></div>
 
           <div className="flex justify-between md:flex-row flex-col-reverse items-center">
-            <img src="https://i.ibb.co/Qpn82NZ/women-with-doge.png" alt="doge" className="z-10 relative -bottom-12" />
+            <Image src={WomenDog} alt="doge" className="z-10 relative -bottom-12" />
             <div className="m-auto mx-10 z-10 text-end">
               <div className="my-5">
                 <p className="text-blue-950 lg:text-6xl md:text-4xl text-xs font-bold">One more friend</p>
@@ -119,7 +120,7 @@ const page = async () => {
           <div className="h-[550px] w-3/4 absolute bg-[#FCEED5] z-0 rounded-full  rotate-[-25.23deg] -top-24 -left-52"></div>
 
           <div className="flex justify-between flex-row-reverse items-center h-full">
-            <img src={"https://i.ibb.co/V3bGqT9/dog-hand.png"} alt="doge " className="z-10 relative h-full" />
+            <Image src={"https://i.ibb.co/V3bGqT9/dog-hand.png"} alt="doge " width={100} height={100} className="z-10 relative h-full" />
             <div className="m-auto mx-10 z-10 text-start">
               <div className="my-5">
                 <p className="text-blue-950 lg:text-5xl md:text-4xl text-2xl font-bold">One more friend</p>

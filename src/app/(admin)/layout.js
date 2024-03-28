@@ -1,6 +1,9 @@
+"use client";
+
 import Nav from "@/components/Admin/shared/Nav";
 import "../globals.css"
 import { Teko } from "next/font/google";
+import AuthChecker from "@/components/hook/AuthChecker";
 const teko = Teko({ subsets: ["latin"] });
 
 const layout = ({ children }) => {

@@ -1,25 +1,30 @@
-"use client"
+"use client";
 
 import { useState as State, useEffect as Effect } from "react";
 import auth from "../Admin/shared/ConfigFirebase";
 
 export default function isUserSigned() {
     const [user, setUser] = State('');
-    const [loading, setLoading] = State(false);
-    
+    const [loaded, setLoaded] = State(false);
+    const [uid, setUID] = State('');
+    const [token, setToken] = State('');
+
     Effect(() => {
-        setLoading(true)
+        setLoaded(false)
         auth.onAuthStateChanged(function handleAuth(user) {
-            if (user) {
+            if (user?.uid) {
                 setUser(user);
-                console.log(user);
-                setLoading(false);
+                setUID(user?.uid);
+                setToken(user?.accessToken);
+                setLoaded(true);
             } else {
-                setUser(null);
-                setLoading(false)
+                setUser('');
+                setUID('');
+                setToken('');
+                setLoaded(true);
             }
         });
     }, [user]);
 
-    return { user, loading };
+    return { user, loaded, uid, token };
 }

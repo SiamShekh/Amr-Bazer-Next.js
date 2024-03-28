@@ -11,6 +11,13 @@ import AuthChecker from "@/components/hook/AuthChecker";
 const page = () => {
     const Google_provider = new GoogleAuthProvider();
 
+    // const uid = localStorage.getItem('uid');
+    // const token = localStorage.getItem('token');
+    // const AxiosPro = axios_auth({token: token, uid: uid});
+
+
+    AuthChecker();
+    
     const HandleGoogleLogin = () => {
         signInWithPopup(auth, Google_provider)
             .then((result) => {
@@ -18,8 +25,7 @@ const page = () => {
                     icon: "success",
                     title: "Login success...",
                     text: "Login successful!",
-                });
-
+                }); 
             }).catch((error) => {
                 const errorMessage = error.message;
                 Swal.fire({
@@ -53,7 +59,7 @@ const page = () => {
             })
     }
 
-    AuthChecker();
+    // AuthChecker();
 
     return (
         <div className="grid lg:grid-cols-6 h-screen bg-gray-100 w-full">

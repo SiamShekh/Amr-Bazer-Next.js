@@ -8,10 +8,12 @@ import Swal from "sweetalert2";
 import isUserSigned from "@/components/hook/isUserSigned";
 import AuthChecker from "@/components/hook/AuthChecker";
 import { useForm as Form } from "react-hook-form";
+import Image from "next/image";
 
 const page = () => {
 
     const Google_provider = new GoogleAuthProvider();
+    AuthChecker();
 
     const HandleGoogleLogin = () => {
         signInWithPopup(auth, Google_provider)
